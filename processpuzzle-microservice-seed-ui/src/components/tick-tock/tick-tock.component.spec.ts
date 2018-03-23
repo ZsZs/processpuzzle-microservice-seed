@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { TickTockModule } from '../../';
+import { ProcessPuzzleMicroserviceSeedUiModule } from '../../';
 import { TickTockComponent } from './tick-tock.component';
 
 describe('TickTockComponent', () => {
@@ -13,7 +13,7 @@ describe('TickTockComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        imports: [ TickTockModule ]
+        imports: [ ProcessPuzzleMicroserviceSeedUiModule ]
       }).compileComponents().then(() => { /* Don't do anything */ });
     })
   );
