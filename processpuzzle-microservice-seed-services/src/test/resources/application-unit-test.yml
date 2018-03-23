@@ -1,0 +1,7 @@
+logging:
+  level:
+    root: INFO
+    com.processpuzzle.seed: INFO
+    org.springframework: INFO
+    org.springframework.beans: INFO
+    org.springframework.security: INFO

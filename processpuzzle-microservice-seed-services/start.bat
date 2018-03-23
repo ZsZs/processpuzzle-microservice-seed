@@ -1,0 +1,1 @@
+start cmd /c "java -jar processpuzzle-microservice-seed.jar --spring.profiles.active=local"
