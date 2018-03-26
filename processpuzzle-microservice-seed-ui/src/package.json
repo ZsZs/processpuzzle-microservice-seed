@@ -1,0 +1,28 @@
+{
+  "name": "processpuzzle-microservice-seed-ui",
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZsZs/processpuzzle-microservice-seed.git"
+  },
+  "author": {
+    "name": "Zsolt Zsuffa",
+    "email": "zsolt.zsuffa@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "Apache-2",
+  "bugs": {
+    "url": "https://github.com/ZsZs/processpuzzle-microservice-seed.git/issues"
+  },
+  "main": "processpuzzle-microservice-seed-ui.umd.js",
+  "module": "processpuzzle-microservice-seed-ui.js",
+  "jsnext:main": "processpuzzle-microservice-seed-ui.js",
+  "typings": "processpuzzle-microservice-seed-ui.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^5.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}

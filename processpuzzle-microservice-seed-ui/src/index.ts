@@ -1,3 +1,3 @@
 export { TickTockService } from './services';
 export { TickTockComponent } from './components';
-export { TickTockModule } from './tick-tock.module';
+export { ProcessPuzzleMicroserviceSeedUiModule } from './processpuzzle-microservice-seed-ui.module';
