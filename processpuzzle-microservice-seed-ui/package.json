@@ -44,7 +44,8 @@
     "docs": "compodoc -p tsconfig.json -d ./target/docs --disableCoverage",
     "explorer": "source-map-explorer ./target/dist/index.umd.js",
     "gh-pages": "rimraf ./target/docs && npm run docs && gh-pages -d ./target/docs",
-    "lint": "npm run tslint 'src/**/*.ts'",
+    "lint": "ng lint --type-check --format json > target/issues.json",
+    "lint-watch": "ng lint --type-check",
     "ngcompile": "node_modules/.bin/ngc -p tsconfig-aot.json",
     "postversion": "git push && git push --tags",
     "prebuild": "rimraf ./target/dist ./target/tmp",
@@ -52,8 +53,7 @@
     "prepublishOnly": "npm run ci",
     "preversion": "npm run ci",
     "test": "karma start",
-    "test:watch": "karma start --auto-watch --no-single-run",
-    "tslint": "tslint"
+    "test:watch": "karma start --auto-watch --no-single-run"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -61,6 +61,7 @@
     "@angular/core": "^5.2.9"
   },
   "devDependencies": {
+    "@angular/cli": "^1.7.3",
     "@angular/common": "^5.2.9",
     "@angular/compiler": "^5.2.9",
     "@angular/compiler-cli": "^5.2.9",
@@ -71,7 +72,7 @@
     "@types/jasmine": "^2.8.6",
     "@types/karma": "^1.7.3",
     "@types/node": "^9.4.7",
-    "@types/tapable": "1.0.0",
+    "@types/tapable": "1.0.2",
     "@types/webpack": "^4.1.1",
     "@types/webpack-env": "^1.13.5",
     "angular2-template-loader": "^0.6.2",
@@ -104,16 +105,16 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
     "rxjs": "^5.5.7",
-    "sass-loader": "^6.0.7",
+    "sass-loader": "^7.0.1",
     "source-map-explorer": "^1.5.0",
     "to-string-loader": "^1.1.5",
-    "ts-node": "^5.0.1",
+    "ts-node": "^6.0.0",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2",
     "webpack": "^4.2.0",
     "webpack-angular-externals": "^1.0.2",
     "webpack-cli": "^2.0.13",
-    "webpack-rxjs-externals": "^1.1.0",
+    "webpack-rxjs-externals": "^2.0.0",
     "zone.js": "git://github.com/JiaLiPassion/zone.js.git#jasmine-dist"
   }
 }

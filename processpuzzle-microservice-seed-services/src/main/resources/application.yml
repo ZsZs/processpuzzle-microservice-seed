@@ -1,6 +1,7 @@
 server:
   port: 9125
-  contextPath: /
+  servlet:
+    context-path: /
 
 security:
   headers:
