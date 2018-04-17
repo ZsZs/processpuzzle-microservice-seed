@@ -12,12 +12,12 @@ public class ProcessPuzzleSeedApplication {
    private static Logger logger = LoggerFactory.getLogger( ProcessPuzzleSeedApplication.class );
 
    public static void main( String[] args ) {
-      logger.info( "About to start ProcessPuzzle-Core." );
+      logger.info( "About to start ProcessPuzzle-Seed." );
       SpringApplication.run( ProcessPuzzleSeedApplication.class, args );
    }
 
    @PreDestroy
    public void shutDown() {
-      logger.info( "About to stop ProcessPuzzle-Core." );
+      logger.info( "About to stop ProcessPuzzle-Seed." );
    }
 }

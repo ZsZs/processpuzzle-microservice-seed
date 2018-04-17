@@ -6,26 +6,35 @@ security:
   headers:
     cache: false
 
-endpoints:
-  shutdown:
-    sensitive: false
-    enabled: true
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      base-path: /admin/actuator
+      exposure:
+        include: '*'
 
 spring:
+  datasource:
+    initialization-mode: always
+    url: jdbc:h2:tcp://localhost/~/mortgage-service-test
+    username: SA
+    password: 
+    testWhileIdle: true
+    validationQuery: SELECT 1
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-    generate-ddl: true
     hibernate:
       ddl-auto: validate
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-    properties:
-      javax.persistence.schema-generation.scripts.create-target: target/schema.sql
-      javax.persistence.schema-generation.scripts.action: create      
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-
-storage:
-  location: upload-files
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  servlet:
+    multipart:
+      max-file-size: 128KB
+      max-request-size: 128KB
+  thymeleaf:
+    prefix: classpath:/templates
     
+logging:
+  config: "classpath:logback-spring.xml"    
