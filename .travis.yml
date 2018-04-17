@@ -52,13 +52,11 @@ before_script:
 - npm install --prefix ./processpuzzle-microservice-seed-ui
 - npm update --prefix ./processpuzzle-microservice-seed-ui
 script:
-- mvn clean install org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar --settings
-  travis-maven-settings.xml -B
+- mvn clean install org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar --settings travis-maven-settings.xml -B
 deploy:
 - provider: script
   skip_cleanup: true
-  script: mvn deploy -Dmaven.test.skip=true --settings travis-maven-settings.xml -Dsettings.security=travis-maven-settings-security.xml
-    -B
+  script: mvn deploy -Dmaven.test.skip=true --settings travis-maven-settings.xml -Dsettings.security=travis-maven-settings-security.xml -B
   on:
     branch: development
 - provider: releases
